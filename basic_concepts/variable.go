@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 //Global variable
-var c, python, java bool
+var c, python, java = false, false, false
 
 func changePython(){
 	//Changing global variables
@@ -15,16 +15,25 @@ func changeJava(){
 	java = true
 }
 
+func changeC(){
+	//Changing global variables
+	c = true
+}
+
+
 func main(){
 	// Local Variable
-	var i int
+	var i int // You can declare a variable mentioning your type
+	var j = 2 // If a initializer is present, the type can be omitted. The variable will take the type of the initializer
+	k := 3 //Inside a function, the := short assignment statement can be used in place of a var declaration with implicit type.
 	changePython()
-	fmt.Println(i, c, python, java)
+	fmt.Println(i, j, c, k, python, java)
 	changeJava()
-	fmt.Println(i, c, python, java)
+	fmt.Println(i, j, c, k, python, java)
 	//Changing local variables
 	i=10
-	fmt.Println(i, c, python, java)
+	changeC()
+	fmt.Println(i, j, c, k, python, java)
 
 }
 
